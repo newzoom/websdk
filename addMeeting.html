@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create video call</title>
-    <title>Bootstrap Example</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -18,21 +17,12 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script>
+      localStorage.setItem("user", JSON.stringify({"id":"520a4f1c-d7a0-4019-8f63-7c8658c43533","name":"Phuong Tran","email":"phuwn29@gmail.com","avatar":"https://lh3.googleusercontent.com/a-/AOh14GgI0Pyg1C_iS61SJ8t2knj-X-3e6xz5vfpKrs2f=s100","access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTM3ODIwMzgsInVzZXJfaWQiOiI1MjBhNGYxYy1kN2EwLTQwMTktOGY2My03Yzg2NThjNDM1MzMifQ.MTM8SAoStpYC9xDBLQ5WPBtGdnhN0Hos2UYHeGkELbo"}
+    ));
+    </script>   
     <script src="main.js"></script>
     <script src="addMeeting.js"></script>
-    <!-- ... -->
-    <script
-      type="text/javascript"
-      src="./bower_components/moment/min/moment.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="./bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
-    />
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -53,13 +43,14 @@
         <div class="col-md-10 padding-top">
           <form class="form-horizontal" action="">
             <div class="form-group">
-              <label class="control-label col-md-2">Metting ID:</label>
+              <label class="control-label col-md-2">Topic:</label>
               <div class="col-md-6">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Enter topic ID"
-                  name="pwd"
+                  placeholder="Enter topic name"
+                  name="name"
+                  id="name"
                 />
               </div>
             </div>
@@ -70,37 +61,28 @@
                   type="password"
                   class="form-control"
                   placeholder="Enter metting password"
-                  name="pwd"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-2">Topic:</label>
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter topic name"
-                  name="pwd"
+                  name="password"
+                  id="password"
                 />
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-2">Description :</label>
               <div class="col-md-6">
-                <textarea
+                <textarea 
                   class="sch-desc form-control"
-                  name="agenda"
                   maxlength="2000"
                   placeholder="Enter your meeting description"
+                  name="description"
+                  id="description"
                 ></textarea>
               </div>
             </div>
             <div class="row">
               <div class="col-md-3"></div>
               <div class="col-md-9">
-                <button type="submit" class="btn btn-primary">Save</button> |
-                <a class="btn btn-default" href="listMetting.html">Cancel</a>
+                <button type="button" class="btn btn-primary" id="submit-save">Save</button> |
+                <a class="btn btn-default" href="">Cancel</a>
               </div>
             </div>
           </form>
