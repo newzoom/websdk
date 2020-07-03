@@ -1,0 +1,3 @@
+npm install -g bower
+bower install eonasdan-bootstrap-datetimepicker#latest --save
+bower install bootstrap-timepicker
