@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Display Webcam Stream</title>
+ 
+<style>
+#container {
+	margin: 0px auto;
+	width: 500px;
+	height: 375px;
+	/* border: 4px #333 solid; */
+}
+#videoElement {
+	width: 500px;
+	height: 375px;
+	background-color: #F1DCEF;
+}
+video {
+	width: 300px;
+	height: 200px;
+	background-color: #F1DCEF;
+	margin: 10px;
+}
+.yellow div {
+    // Apply margin to every child in this container
+    margin: 10px;
+}
+
+.yellow div:first-child, .yellow div:nth-child(3n+1) {
+    // Remove the margin on the left side on the very first and then every fourth element (for example)
+    margin-left: 0;
+}
+
+.yellow div:last-child {
+    // Remove the right side margin on the last element
+    margin-right: 0;
+}
+/* .button1 {
+	margin-top: 20px;
+} */
+</style>
+</head>
+<body>
+<div id="container">
+	<video autoplay="true" id="videoElement"></video>
+</div>
+<div>
+	<button onclick="start()">ON</button>
+	<button onclick="stop()" >OFF</button>
+	<button onclick="add_child()">PLUS</button>
+	<button onclick="remove()">Remove</button>
+</div>
+	<div class="yellow" id="yellow">
+		<video class="Video"></video>
+		<video class="Video"></video>
+	</div>
+</div>
+<script>
+	var video = document.querySelector("#videoElement");
+		if (navigator.mediaDevices.getUserMedia) {
+		  navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+		    .then(function (stream) {
+		      video.srcObject = stream;
+		    })
+		    .catch(function (err0r) {
+		      console.log("Something went wrong!");
+		    });
+		}
+	function start() {
+		/*var video = document.querySelector("#videoElement");*/
+		if (navigator.mediaDevices.getUserMedia) {
+		  navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+		    .then(function (stream) {
+		      video.srcObject = stream;
+		    })
+		}
+	}	
+	function stop() {
+			var stream = video.srcObject;
+		    var tracks = stream.getTracks();
+		    for (var i = 0; i < tracks.length; i++) {
+		    var track = tracks[i];
+		    track.stop();
+		}
+		video.srcObject = null;
+    }  
+    function add_child() { 
+       var video1 = document.createElement("video");
+       var div = document.getElementById("yellow");
+       div.appendChild(video1);
+   }
+   function remove(){
+	    var select = document.getElementById('yellow');
+    	select.removeChild(select.lastChild);
+   }
+</script>
+</body>
+</html>
