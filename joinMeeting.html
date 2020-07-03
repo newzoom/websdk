@@ -14,19 +14,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- ... -->
-    <script
-      type="text/javascript"
-      src="./bower_components/moment/min/moment.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="./bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
-    />
+    <script>
+      localStorage.setItem("user", JSON.stringify({"id":"520a4f1c-d7a0-4019-8f63-7c8658c43533","name":"Phuong Tran","email":"phuwn29@gmail.com","avatar":"https://lh3.googleusercontent.com/a-/AOh14GgI0Pyg1C_iS61SJ8t2knj-X-3e6xz5vfpKrs2f=s100","access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTM3ODIwMzgsInVzZXJfaWQiOiI1MjBhNGYxYy1kN2EwLTQwMTktOGY2My03Yzg2NThjNDM1MzMifQ.MTM8SAoStpYC9xDBLQ5WPBtGdnhN0Hos2UYHeGkELbo"}
+    ));
+    </script>  
+    <script src="main.js"></script>
+    <script src="joinMeeting.js"></script>
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -44,38 +37,40 @@
             </li>
           </ul>
         </div>
-        <div class="col-md-10 padding-top">
-          <form class="form-horizontal" action="">
-            <div class="form-group">
-              <label class="control-label col-md-2">Metting ID:</label>
-              <div class="col-md-6">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter topic ID"
-                  name="pwd"
-                />
+        <div class="col-md-10 container">
+          <h1 style="margin-bottom: 30px;">The meeting is ready</h1>
+          <div class="row" >
+            <div class="col-md-7">
+              <div id="video_area" >
+                <video autoplay="true" id="video_element"></video>
               </div>
             </div>
-            <div class="form-group">
-              <label class="control-label col-md-2">Password:</label>
-              <div class="col-md-6">
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Enter metting password"
-                  name="pwd"
-                />
-              </div>
+            <div class="col-md-5">
+              <h3 style="text-align: justify;">Cuộc họp thảo luận về vấn đề triển khai website cuối kì tmp tmp tmp tmp tmp tmpt tmp</h3>
+              <h5 style="margin-bottom: 30px;">Một số mô tả cho cuộc họp ở đây</h5>
+              <form class="form-horizontal" action="">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-9 col-xs-7" style="padding-right: 0;">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder="Enter metting password"
+                          name="password"
+                          id="password"
+                        />
+                      </div>
+                      <div class="col-md-3 col-xs-5" style="padding-left: 0;">
+                        <button type="button" class="btn btn-primary" style="width: 100%;" id="submit-join">Join</button> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <span id="password_res" style="color: red;"></span>
             </div>
-            <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9">
-                <button type="submit" class="btn btn-primary">Join</button> |
-                <button type="submit" class="btn btn-default">Cancel</button>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
