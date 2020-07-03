@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create video call</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <!-- ... -->
+    <script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="./bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 nav-menu">
+                <ul class="nav flex-column"> <p class="title">Metting</p>
+                    <li class="nav-item">
+                        <a class="nav-link" href="joinMetting.html">Join</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="listMetting.html">List Metting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addMetting.html">Add Metting</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10 padding-top">
+                <a href="addMetting.html" class="btn btn-primary">Add metting</a>
+                <hr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col" class="col-md-2">Topic</th>
+                            <th scope="col" class="col-md-2 text-center">Metting ID</th>
+                            <th scope="col" class="col-md-2 text-center">Password</th>
+                            <th scope="col" class="col-md-2 text-center">Time</th>
+                            <th scope="col" class="col-md-1">Status</th>
+                            <th scope="col" class="col-md-3">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-topic">
+                            <th rowspan = "2" scope="row">1</th>
+                            <td class="col-md-2" style="word-wrap: break-word"><a href="" class="">CNW CNW CNW </a></td>
+                            <td class="col-md-2 text-center">109231284</td>
+                            <td class="col-md-2 text-center">********* <i class="far fa-eye"></i></td>
+                            <td class="col-md-2 text-center">11-12-2020</td>
+                            <td class="col-md-1">Metting</td>
+                            <td class="col-md-3" style="word-wrap: break-word">asdasd asd asda sdasdas d asds  sadas asdasd asd asda sdasdas d asds  sadas asdasd asd asda sdasdas d asds  sadas</td>
+                        </tr>
+                        <tbody>
+                            <tr class="row-topic">
+                                <th rowspan = "2" scope="row">2</th>
+                                <td class="col-md-2" style="word-wrap: break-word"><a href="" class="">CNW CNW CNW </a></td>
+                                <td class="col-md-2 text-center">109231284</td>
+                                <td class="col-md-2 text-center">********* <i class="far fa-eye"></i></td>
+                                <td class="col-md-2 text-center">11-12-2020</td>
+                                <td class="col-md-1">Metting</td>
+                                <td class="col-md-3" style="word-wrap: break-word">asdasd asd asda sdasdas d asds  sadas asdasd asd asda sdasdas d asds  sadas asdasd asd asda sdasdas d asds  sadas</td>
+                            </tr>
+                        </tbody>
+                    </tbody>
+                  </table>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(".row-topic").on('click', function(){
+        $(this).children("tr").css("display", "none");
+    });
+</script>
+
