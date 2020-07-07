@@ -2,7 +2,6 @@ let u = null;
 function getUserLocalData() {
   let retrievedData = localStorage.getItem("user");
   if (retrievedData != undefined && retrievedData != null) {
-    console.log("wtf");
     u = JSON.parse(retrievedData);
   }
 }
@@ -33,4 +32,14 @@ function logOut() {
     localStorage.removeItem("user");
     window.location.replace("http://" + document.location.host + "/login.html");
   });
+}
+
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
