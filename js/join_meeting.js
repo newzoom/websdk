@@ -10,14 +10,12 @@ if (u == undefined || u == null) {
   throw "";
 }
 
-let room;
 $(document).ready(function () {
   $.ajax({
     type: "get",
     url: `http://${document.location.host}/conferences/${id_room}?token=${u.access_token}`,
     contentType: "application/json",
     success: function ({ data }) {
-      room = data;
       if (!data.is_active) {
         alert("The conference has ended!");
         window.location.replace(`http://${window.location.host}`);
@@ -57,7 +55,8 @@ $(document).ready(function () {
       contentType: "application/json",
       data: JSON.stringify({ password: password }),
       success: function ({ data }) {
-        window.location.replace(`http://${window.location.host}`);
+        var url = `http://${window.location.host}/conference.html?id_room=${id_room}`;
+        window.location.replace(encodeURI(url));
       },
       error: function (resp) {
         var err;
