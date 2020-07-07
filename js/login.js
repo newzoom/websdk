@@ -14,9 +14,25 @@ $(document).ready(function () {
           console.log("log in successfully");
           u = data;
           localStorage.setItem("user", JSON.stringify(data));
-          window.location.replace(
-            "http://" + document.location.host + "/join_meeting.html"
-          );
+          var redirect = getParameterByName("redirect");
+          if (!redirect) {
+            window.location.replace(
+              "http://" + document.location.host + "/add_meeting.html"
+            );
+          } else {
+            window.location.replace(
+              `http://${document.location.host}/${redirect}`
+            );
+          }
+        },
+        error: function (resp) {
+          var err;
+          if (!resp.responseJSON) {
+            err = resp.statusText;
+          } else {
+            err = resp.responseJSON.error.error;
+          }
+          $("#errTxt").html(err);
         },
       });
     } else {
