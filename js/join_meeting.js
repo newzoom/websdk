@@ -6,7 +6,7 @@ if (!id_room) {
 
 if (u == undefined || u == null) {
   var url = `https://${document.location.host}/login.html?redirect=join_meeting.html?id_room=${id_room}`;
-  window.location.href = encodeURI(url);
+  window.location.replace(encodeURI(url));
   throw "";
 }
 
@@ -37,7 +37,7 @@ $(document).ready(function () {
 
   var video = document.querySelector("#video_element");
   navigator.mediaDevices
-    .getUserMedia({ video: true })
+    .getUserMedia({ video: true, audio: true })
     .then(function (stream) {
       video.srcObject = stream;
     })

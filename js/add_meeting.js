@@ -1,5 +1,5 @@
 if (u == undefined || u == null) {
-  window.location.href = "https://" + document.location.host + "/login.html";
+  window.location.replace("https://" + document.location.host + "/login.html");
   throw "";
 }
 

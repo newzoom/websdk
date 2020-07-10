@@ -6,15 +6,15 @@ if (!id_room) {
   throw "";
 }
 
-if (performance.navigation.type == 1) {
-  var url = `https://${window.location.host}/join_meeting.html?id_room=${id_room}`;
-  window.location.replace(encodeURI(url));
+let join_url = `https://${window.location.host}/join_meeting.html?id_room=${id_room}`;
+if (document.referrer != join_url || performance.navigation.type == 1) {
+  window.location.replace(encodeURI(join_url));
   throw "";
 }
 
 if (u == undefined || u == null) {
   var url = `https://${document.location.host}/login.html?redirect=join_meeting.html?id_room=${id_room}`;
-  window.location.href = encodeURI(url);
+  window.location.replace(encodeURI(url));
   throw "";
 }
 
