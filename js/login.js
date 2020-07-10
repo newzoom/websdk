@@ -3,7 +3,7 @@ $(document).ready(function () {
     if (authResult["code"]) {
       $.ajax({
         type: "POST",
-        url: "http://" + document.location.host + "/auth",
+        url: "https://" + document.location.host + "/auth",
         headers: {
           "X-Requested-With": "XMLHttpRequest",
         },
@@ -17,11 +17,11 @@ $(document).ready(function () {
           var redirect = getParameterByName("redirect");
           if (!redirect) {
             window.location.replace(
-              "http://" + document.location.host + "/add_meeting.html"
+              "https://" + document.location.host + "/add_meeting.html"
             );
           } else {
             window.location.replace(
-              `http://${document.location.host}/${redirect}`
+              `https://${document.location.host}/${redirect}`
             );
           }
         },

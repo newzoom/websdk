@@ -30,7 +30,9 @@ function logOut() {
     console.log("User signed out.");
     u = null;
     localStorage.removeItem("user");
-    window.location.replace("http://" + document.location.host + "/login.html");
+    window.location.replace(
+      "https://" + document.location.host + "/login.html"
+    );
   });
 }
 

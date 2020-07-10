@@ -2,18 +2,18 @@
 
 let id_room = getParameterByName("id_room");
 if (!id_room) {
-  window.location.replace(`http://${window.location.host}`);
+  window.location.replace(`https://${window.location.host}`);
   throw "";
 }
 
 if (performance.navigation.type == 1) {
-  var url = `http://${window.location.host}/join_meeting.html?id_room=${id_room}`;
+  var url = `https://${window.location.host}/join_meeting.html?id_room=${id_room}`;
   window.location.replace(encodeURI(url));
   throw "";
 }
 
 if (u == undefined || u == null) {
-  var url = `http://${document.location.host}/login.html?redirect=join_meeting.html?id_room=${id_room}`;
+  var url = `https://${document.location.host}/login.html?redirect=join_meeting.html?id_room=${id_room}`;
   window.location.href = encodeURI(url);
   throw "";
 }
@@ -201,7 +201,7 @@ function leave() {
     map.delete(id);
   });
   hangupButton.disabled = true;
-  window.location.replace(`http://${window.location.host}`);
+  window.location.replace(`https://${window.location.host}`);
 }
 
 let silence = () => {
