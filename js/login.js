@@ -9,7 +9,10 @@ $(document).ready(function () {
         },
         contentType: "application/octet-stream; charset=utf-8",
         processData: false,
-        data: authResult["code"],
+        data: JSON.stringify({
+          code: authResult["code"],
+          redirect_url: "https://" + document.location.host,
+        }),
         success: function ({ data }) {
           console.log("log in successfully");
           u = data;

@@ -59,7 +59,7 @@ async function call() {
   hangupButton.disabled = false;
   if (window["WebSocket"]) {
     conn = new WebSocket(
-      `ws://${document.location.host}/ws?token=${u.access_token}&id_room=${id_room}`
+      `wss://${document.location.host}/ws?token=${u.access_token}&id_room=${id_room}`
     );
     conn.onclose = function (evt) {
       leave();
